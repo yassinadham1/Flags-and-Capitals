@@ -1,0 +1,49 @@
+/* ---------- BASIC PAGE SETUP ---------- */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center; /* centers the game box horizontally */
+  padding-top: 50px;
+}
+
+/* ---------- THE GAME CARD ---------- */
+.game-box {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+}
+
+.score {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+/* The flag is just an emoji, so we make it big with font-size */
+.flag {
+  font-size: 70px;
+  margin-bottom: 10px;
+}
+
+.question-text {
+  margin-bottom: 15px;
+}
+
+/* ---------- ANSWER BUTTONS ---------- */
+/* .choices is the container the 4 buttons will sit inside */
+.choices {
+  display: flex;
+  flex-direction: column; /* stack buttons one under another */
+  gap: 8px; /* space between buttons */
+}
+
+.choice-btn {
+  padding: 10px;
+  font-size: 15px;
+}
+
+.next-btn {
+  margin-top: 15px;
+  padding: 8px 16px;
+}
