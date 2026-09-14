@@ -1,2 +1,5 @@
-# Flags-and-Capitals
-A simple web project for practicing the basics of what I have learned so far, I will share it here as a memory maybe it would be nice to see this in the future.
+# Capitals
+A simple web project for practicing how web works.
+I used Ai for building the front-end then I modified it.
+Built simple API to return the country's data and the valid answers.
+This is a beta version just for practicing and working on real projects.
