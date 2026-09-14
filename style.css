@@ -1,49 +1,209 @@
 /* ---------- BASIC PAGE SETUP ---------- */
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center; /* centers the game box horizontally */
-  padding-top: 50px;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* ---------- THE GAME CARD ---------- */
-.game-box {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  width: 300px;
-  text-align: center;
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #273469, transparent 40%),
+        radial-gradient(circle at bottom right, #1b998b, transparent 35%),
+        #0f172a;
+
+    color: #f8fafc;
 }
+
+
+/* ---------- GAME CARD ---------- */
+
+.game-box {
+    width: 420px;
+    padding: 32px;
+
+    text-align: center;
+
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(15px);
+}
+
+
+/* ---------- SCORE ---------- */
 
 .score {
-  margin-bottom: 10px;
-  font-size: 18px;
+    margin-bottom: 30px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    color: #cbd5e1;
 }
 
-/* The flag is just an emoji, so we make it big with font-size */
-.flag {
-  font-size: 70px;
-  margin-bottom: 10px;
+#score {
+    display: inline-block;
+
+    min-width: 35px;
+    margin-left: 5px;
+
+    color: #38bdf8;
+    font-size: 24px;
 }
+.total-questions {
+    margin-bottom: 30px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    color: #cbd5e1;
+}
+
+#total-questions {
+    display: inline-block;
+
+    min-width: 35px;
+    margin-left: 5px;
+
+    color: #38bdf8;
+    font-size: 24px;
+}
+
+
+/* ---------- QUESTION ---------- */
 
 .question-text {
-  margin-bottom: 15px;
+    margin-bottom: 25px;
+
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    color: #f8fafc;
 }
+
 
 /* ---------- ANSWER BUTTONS ---------- */
-/* .choices is the container the 4 buttons will sit inside */
+
 .choices {
-  display: flex;
-  flex-direction: column; /* stack buttons one under another */
-  gap: 8px; /* space between buttons */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
+
 
 .choice-btn {
-  padding: 10px;
-  font-size: 15px;
+    width: 100%;
+    padding: 14px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.06);
+    color: #e2e8f0;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
 }
 
+
+/* Hover effect */
+
+.choice-btn:hover {
+    transform: translateY(-2px);
+
+    background: rgba(56, 189, 248, 0.12);
+    border-color: rgba(56, 189, 248, 0.5);
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Click effect */
+
+.choice-btn:active {
+    transform: translateY(0);
+}
+
+
+/* Disabled buttons */
+
+.choice-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+
+/* ---------- NEXT BUTTON ---------- */
+
 .next-btn {
-  margin-top: 15px;
-  padding: 8px 16px;
+    width: 100%;
+    margin-top: 24px;
+    padding: 13px 20px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #38bdf8;
+    color: #0f172a;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+
+.next-btn:hover {
+    transform: translateY(-2px);
+
+    background: #7dd3fc;
+
+    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+}
+
+
+.next-btn:active {
+    transform: translateY(0);
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 500px) {
+
+    .game-box {
+        width: calc(100% - 30px);
+        padding: 25px;
+    }
+
+    .question-text {
+        font-size: 21px;
+    }
 }
